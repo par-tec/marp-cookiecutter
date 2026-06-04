@@ -26,6 +26,7 @@ repos:
     args: [--fix=lf]
   # Check file syntax/format
   - id: check-xml
+    exclude: '.*.svg$'
   - id: check-json
     exclude: '.devcontainer/.*'  # devcontainer json files can contain comments.
   - id: check-yaml
