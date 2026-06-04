@@ -84,25 +84,70 @@ abstract: |-
     Instead, providing central services to autonomies is a way to consolidate expenditure and
     relieving the burden of cybersecurity and maintenance from the shoulders of local administrations, which can then focus on delivering value to citizens.
 ---
-<style>
+<!-- footer: ![w:400](assets/img/logo/logo-black-noclaim.svg) -->
 
-section.cover .subtitle {
-  font-size: 26px;
-  color: rgba(0,0,0,0.6);
-  margin-top: 16px;
+<style>
+/*
+  SVG canvas: 1440×810  →  Marp canvas: 1280×720  (scala 8/9)
+  SLIDE2 / SLIDE5: pannello scuro a sinistra, crema da x=703 SVG → x≈625 Marp
+  SLIDE3 / SLIDE6: sfondo tutto chiaro, forme decorative come bg
+*/
+
+/* Cover — SLIDE2: contenuto nel pannello crema (metà destra) */
+section.sv-cover {
+  padding-left: 640px;
 }
 
-section.cover .author {
-  position: absolute;
-  bottom: 60px;
-  left: 540px;
-  font-size: 28px;
-  font-weight: 500;
+/* Content — SLIDE3: testo libero su sfondo chiaro */
+section.sv-content {
+  /* il padding base del tema (60/80/100/80) va bene */
+}
+
+/* Closing — SLIDE5: contenuto nel pannello crema (metà destra) */
+section.sv-closing {
+  padding-left: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.sv-closing h1 {
+  font-size: 96px;
+  line-height: 1.0;
+  margin-bottom: 16px;
+}
+
+section.sv-closing .contact {
+  font-size: 26px;
+  color: rgba(13,13,13,0.6);
+}
+
+footer {
+  /* Unset default placing inherited from the built-in theme */
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+
+  /* Place to right-bottom */
+  right: -50px;
+  bottom: -100px;
+}
+
+/* --- Two-column content --- */
+section.two-col .columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 8px;
 }
 
 </style>
 ---
-<!-- _class: cover -->
+<!--
+_class: cover
+_backgroundImage: "url('assets/img/istituzionale/cover.svg')"
+-->
 
 <div class="title-area">
 
@@ -117,6 +162,15 @@ section.cover .author {
 
 ---
 
+<!--
+_class: two-col
+_footer: "url()"
+-->
+
+<div class="columns">
+
+<div>
+
 ## Who am I?
 
 Roberto Polli @ioggstream
@@ -128,9 +182,20 @@ Python enthusiast, IETF HTTP & HTTPAPI workgroup
 5 years in the Italian Government's Digital Transformation Team
 
 Red Hat, MongoDB | MySQL Certified
+</div>
+
+<div>
+
+![bg](assets/img/istituzionale/columns-2-text-img2.svg)
+
+</div>
+</div>
 
 ---
-
+<!--
+_class: sv-content
+_footer: "url()"
+-->
 ## par-tec.it
 
 - Software & Infrastructure system integrator
@@ -292,3 +357,18 @@ What worked:
 - National platforms and registries for interoperability.
 - You don't always need laws,
 - unless you do.
+
+
+---
+
+<!-- Contatti Speaker -->
+<div class="contact">
+roberto.polli@par-tec.it
+</div>
+
+---
+
+<!--
+_class: sv-closing
+_backgroundImage: "url('assets/img/istituzionale/final.svg')"
+-->
