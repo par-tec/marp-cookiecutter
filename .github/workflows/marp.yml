@@ -1,4 +1,5 @@
-# Render the Marp slides in slides/ and publish them to the gh-pages branch.
+# Render every Marp deck in slides/ to HTML and publish them, with an
+# index page, to the gh-pages branch.
 
 name: Publish slides
 
@@ -13,6 +14,11 @@ on:
 permissions:
   contents: read
 
+env:
+  # Pinned Marp CLI standalone binary (no Node.js required).
+  MARP_VERSION: v4.4.0
+  MARP_SHA256: 018b1fd71daeba858363798ee7bb870e8647039d45fe30e803ad79a0abd7d93b
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -25,17 +31,34 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Render Marp slides to HTML
-        # Pinned by digest (sha256) for reproducible builds.
+      - name: Download Marp CLI (pinned, sha256-verified)
+        run: |
+          curl -sSfL -o marp-cli.tar.gz \
+            "https://github.com/marp-team/marp-cli/releases/download/${MARP_VERSION}/marp-cli-${MARP_VERSION}-linux.tar.gz"
+          echo "${MARP_SHA256}  marp-cli.tar.gz" | sha256sum --check --strict
+          tar xzf marp-cli.tar.gz
+
+      - name: Render decks and build index
         run: |
           mkdir -p _site
-          cp -r slides/assets _site/assets
-          docker run --rm --init \
-            -e MARP_USER="$(id -u):$(id -g)" \
-            -v "$PWD/slides:/home/marp/app" \
-            -v "$PWD/_site:/site" \
-            marpteam/marp-cli@sha256:073470f0b5cb526fdce43aaace48d93788eafe9f0962ab867aac9c2c3b29d2c2 \
-            template.md --html -o /site/index.html
+          # Copy assets so relative image/logo paths resolve on the site.
+          if [ -d slides/assets ]; then cp -r slides/assets _site/assets; fi
+          # One interactive HTML deck per markdown file, mirroring slides/.
+          ./marp --input-dir slides --output _site --html
+          # Generate an index linking every rendered deck.
+          {
+            echo '<!doctype html>'
+            echo '<html lang="en"><head><meta charset="utf-8">'
+            echo '<title>Slides</title></head><body>'
+            echo '<h1>Slides</h1>'
+            echo '<ul>'
+            find _site -name '*.html' ! -name 'index.html' | sort | while read -r f; do
+              rel="${f#_site/}"
+              echo "<li><a href=\"${rel}\">${rel%.html}</a></li>"
+            done
+            echo '</ul>'
+            echo '</body></html>'
+          } > _site/index.html
 
       - name: Publish to gh-pages
         uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
