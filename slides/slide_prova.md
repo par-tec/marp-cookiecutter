@@ -50,7 +50,7 @@ section.sv-closing .contact {
 
 <!-- _class: sv-cover -->
 
-![bg](assets/img/SLIDE2.svg)
+![bg](assets/img/istituzionale/cover.svg)
 
 # Titolo Presentazione
 
@@ -77,15 +77,15 @@ section.sv-closing .contact {
 
 ---
 
-<!-- ═══════════════════════════════════════════════════════════════
-     SLIDE 3 — CHIUSURA
-     SVG: SLIDE5  (sfondo scuro sx, pannello crema dx da x≈625px)
-     ═══════════════════════════════════════════════════════════════ -->
+<!-- Slide di saluto, con contatti speaker -->
 
-<!-- _class: sv-closing -->
-
-![bg](assets/img/SLIDE5.svg)
-
-# Grazie!
+## Contatti Speaker
 
 <div class="contact">nome.cognome@par-tec.it</div>
+
+---
+<!-- Slide di chiusura, con loghi azienda -->
+<!--
+_class: sv-closing
+_backgroundImage: "url('assets/img/istituzionale/final.svg')"
+-->

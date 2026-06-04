@@ -12,8 +12,8 @@
   "workspaceFolder": "/workspace",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
 
-  "remoteUser": "vscode",
-  "containerUser": "vscode",
+  "remoteUser": "node",
+  "containerUser": "node",
 
   // Drop Linux capabilities and forbid privilege escalation. Combined with
   // the non-root user this is the minimum hardening we want by default.
@@ -25,19 +25,16 @@
     // ,"--runtime=runsc"
   ],
 
-  // Install project dev extras once the container is up.
-  "postCreateCommand": "pip install --user -e '.[dev]'",
+  // Install the Marp CLI so contributors can render decks locally,
+  // matching the version pinned in .github/workflows/marp.yml.
+  // "postCreateCommand": "npm install -g @marp-team/marp-cli@4.4.0",
 
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-python.python",
+        "marp-team.marp-vscode",
         "anthropic.claude-code"
-      ],
-      "settings": {
-        "python.defaultInterpreterPath": "/usr/local/bin/python",
-        "python.testing.pytestEnabled": true
-      }
+      ]
     }
   }
 }
