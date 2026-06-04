@@ -14,21 +14,11 @@ services:
     - .:/code
   super-linter:
     image: super-linter/super-linter@47984f49b4e87383eed97890fe2dca6063bbd9c3  # v8.3.1
+    # Shared linter flags live in .github/super-linter.env (also used by CI).
+    env_file:
+    - .github/super-linter.env
     environment:
-    - RUN_LOCAL=true
-    - VALIDATE_MARKDOWN=false
-    - VALIDATE_MARKDOWN_PRETTIER=false
-    - VALIDATE_PYTHON_ISORT=false
-    - VALIDATE_XML=false
-    - VALIDATE_NATURAL_LANGUAGE=false
-    - IGNORE_GITIGNORED_FILES=true
-    - VALIDATE_YAML=false  # YAML delegated to pre-commit
-    - VALIDATE_YAML_PRETTIER=false  # YAML delegated to pre-commit
-    - VALIDATE_JSCPD=false  # JSCPD is too slow for our codebase
-    - VALIDATE_JSON=false  # JSON delegated to pre-commit
-    - VALIDATE_JSON_PRETTIER=false  # JSON delegated to pre-commit
-    - VALIDATE_BIOME_FORMAT=false  # JSON delegated to pre-commit
-
+    - RUN_LOCAL=true  # local-only; do not move to the shared env file
     volumes:
     - .:/tmp/lint/
   # This container will run successfully
