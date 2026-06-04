@@ -50,7 +50,7 @@ section.sv-closing .contact {
 
 <!-- _class: sv-cover -->
 
-![bg](assets/img/SLIDE2.svg)
+![bg](assets/img/istituzionale/cover.svg)
 
 # Titolo Presentazione
 

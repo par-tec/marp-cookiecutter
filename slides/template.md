@@ -4,31 +4,6 @@ theme: partec
 paginate: false
 ---
 
-<!--
-  ╔══════════════════════════════════════════════════════════════════╗
-  ║  HOW TO USE THIS TEMPLATE                                       ║
-  ║                                                                  ║
-  ║  Render:                                                         ║
-  ║    marp template.md --html --output slides.html                 ║
-  ║    marp template.md --pdf  --output slides.pdf                  ║
-  ║                                                                  ║
-  ║  Fonts: Abordage (headings) is a commercial font.               ║
-  ║  To use it, place Abordage.woff2 in assets/ and                 ║
-  ║  uncomment the @font-face block in the theme CSS below.         ║
-  ║  The fallback stack ("Space Grotesk", "Plus Jakarta Sans")      ║
-  ║  is a free close match — install via Google Fonts or:           ║
-  ║    <link rel="preconnect" href="https://fonts.googleapis.com">  ║
-  ║    <link href="https://fonts.googleapis.com/css2?             ║
-  ║      family=Space+Grotesk:wght@300..700&display=swap"          ║
-  ║      rel="stylesheet">                                           ║
-  ║                                                                  ║
-  ║  Logo: assets/logo-partec.png is shown on every slide via       ║
-  ║  the `footer` directive + CSS. To change it globally:           ║
-  ║    footer: '<!-- logo: assets/your-logo.png -->'                ║
-  ║  (see _footer CSS rule below)                                    ║
-  ╚══════════════════════════════════════════════════════════════════╝
--->
-
 <!-- Global footer — logo appears on every slide via CSS background -->
 <!-- _footer: Mastering API Design at Scale · Roberto Polli -->
 
