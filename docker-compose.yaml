@@ -13,7 +13,7 @@ services:
     volumes:
     - .:/code
   super-linter:
-    image: github/super-linter:v3.15.5
+    image: super-linter/super-linter@47984f49b4e87383eed97890fe2dca6063bbd9c3  # v8.3.1
     environment:
     - RUN_LOCAL=true
     - VALIDATE_MARKDOWN=false
@@ -23,7 +23,12 @@ services:
     - VALIDATE_NATURAL_LANGUAGE=false
     - IGNORE_GITIGNORED_FILES=true
     - VALIDATE_YAML=false  # YAML delegated to pre-commit
+    - VALIDATE_YAML_PRETTIER=false  # YAML delegated to pre-commit
     - VALIDATE_JSCPD=false  # JSCPD is too slow for our codebase
+    - VALIDATE_JSON=false  # JSON delegated to pre-commit
+    - VALIDATE_JSON_PRETTIER=false  # JSON delegated to pre-commit
+    - VALIDATE_BIOME_FORMAT=false  # JSON delegated to pre-commit
+
     volumes:
     - .:/tmp/lint/
   # This container will run successfully
