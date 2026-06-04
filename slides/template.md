@@ -251,6 +251,28 @@ section.has-shapes .content {
   margin-left: 420px;
 }
 
+/* --- Three stacked hexagons (left accent) --- */
+section.has-hexagons .hex-stack {
+  position: absolute;
+  left: 30px;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 1;
+}
+
+section.has-hexagons .hex {
+  width: 130px;
+  height: 150px;
+  background: var(--hex-color, var(--color-yellow));
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+section.has-hexagons .content {
+  margin-left: 210px;
+}
+
 /* ────────────────────────────────────────────────────────────────
    SLIDE VARIANTS
    ──────────────────────────────────────────────────────────────── */
@@ -333,6 +355,35 @@ section.code-slide pre {
   font-size: 18px;
 }
 
+/* --- Geometric circles (half-moon decorations on left and right) --- */
+section.circles {
+  background-color: var(--color-bg);
+  overflow: hidden;
+}
+
+section.circles .circle {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+section.circles .yellow  { width:548px; height:548px; background:#F5A623;              left:-147px;  z-index:1; }
+section.circles .black-l { width:413px; height:413px; background:var(--color-black);   left:-207px;  z-index:2; }
+section.circles .blue    { width:548px; height:548px; background:#A8D8E8;              right:-147px; z-index:3; }
+section.circles .black-r { width:413px; height:413px; background:var(--color-black);   right:-207px; z-index:4; }
+
+/* Add rotate(180deg) to flip a crescent: transform: translateY(-50%) rotate(180deg) */
+
+section.circles .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5;
+}
+
 /* --- Thank you / closing slide --- */
 section.closing {
   background-color: var(--color-black);
@@ -409,6 +460,31 @@ Python enthusiast, IETF HTTP & HTTPAPI workgroup
 5 years in the Italian Government's Digital Transformation Team
 
 Red Hat, MongoDB | MySQL Certified
+
+</div>
+
+---
+
+<!-- ═══════════════════════════════════════════════════════════════
+     CONTENT SLIDE — three stacked yellow hexagons + right content
+     Override hex colour: style="--hex-color: #C9B135"
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- _class: has-hexagons -->
+
+<div class="hex-stack">
+  <div class="hex"></div>
+  <div class="hex"></div>
+  <div class="hex"></div>
+</div>
+
+<div class="content">
+
+## Slide Title
+
+- Bullet point one
+- Bullet point two
+- Bullet point three
 
 </div>
 
@@ -556,6 +632,29 @@ paths:
 - A team of 200+ employees with 200+ professional certifications
 
 </div>
+</div>
+
+---
+
+<!-- ═══════════════════════════════════════════════════════════════
+     CIRCLES SLIDE — geometric half-moon decorations
+     Yellow crescent left, blue crescent right, content centred.
+     To flip a crescent add rotate(180deg) to its transform.
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- _class: circles -->
+
+<div class="circle yellow"></div>
+<div class="circle black-l"></div>
+<div class="circle blue"></div>
+<div class="circle black-r"></div>
+
+<div class="content">
+
+# Title Here
+
+<div class="subtitle">Subtitle or tagline</div>
+
 </div>
 
 ---
