@@ -1,67 +1,60 @@
+---
 # Render every Marp deck in slides/ to HTML and publish them, with an
 # index page, to the gh-pages branch.
-
 name: Publish slides
-
 on:
   push:
     branches: ["main"]
-
+  pull_request:
+    branches: ["main"]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
 # Least privilege by default; the publish job opts into write access.
 permissions:
   contents: read
-
 env:
   # Pinned Marp CLI standalone binary (no Node.js required).
   MARP_VERSION: v4.4.0
   MARP_SHA256: 018b1fd71daeba858363798ee7bb870e8647039d45fe30e803ad79a0abd7d93b
-
 jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
       # Needed to push the rendered slides to the gh-pages branch.
       contents: write
-
     steps:
-      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
-        with:
-          persist-credentials: false
-
-      - name: Download Marp CLI (pinned, sha256-verified)
-        run: |
-          curl -sSfL -o marp-cli.tar.gz \
-            "https://github.com/marp-team/marp-cli/releases/download/${MARP_VERSION}/marp-cli-${MARP_VERSION}-linux.tar.gz"
-          echo "${MARP_SHA256}  marp-cli.tar.gz" | sha256sum --check --strict
-          tar xzf marp-cli.tar.gz
-
-      - name: Render decks and build index
-        run: |
-          mkdir -p _site
-          # Copy assets so relative image/logo paths resolve on the site.
-          if [ -d slides/assets ]; then cp -r slides/assets _site/assets; fi
-          # One interactive HTML deck per markdown file, mirroring slides/.
-          ./marp --input-dir slides --output _site --html
-          # Generate an index linking every rendered deck.
-          {
-            echo '<!doctype html>'
-            echo '<html lang="en"><head><meta charset="utf-8">'
-            echo '<title>Slides</title></head><body>'
-            echo '<h1>Slides</h1>'
-            echo '<ul>'
-            find _site -name '*.html' ! -name 'index.html' | sort | while read -r f; do
-              rel="${f#_site/}"
-              echo "<li><a href=\"${rel}\">${rel%.html}</a></li>"
-            done
-            echo '</ul>'
-            echo '</body></html>'
-          } > _site/index.html
-
-      - name: Publish to gh-pages
-        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+    - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10  # v6.0.3
+      with:
+        persist-credentials: false
+    - name: Download Marp CLI (pinned, sha256-verified)
+      run: |
+        curl -sSfL -o marp-cli.tar.gz \
+          "https://github.com/marp-team/marp-cli/releases/download/${MARP_VERSION}/marp-cli-${MARP_VERSION}-linux.tar.gz"
+        echo "${MARP_SHA256}  marp-cli.tar.gz" | sha256sum --check --strict
+        tar xzf marp-cli.tar.gz
+    - name: Render decks and build index
+      run: |
+        mkdir -p _site
+        # Copy assets so relative image/logo paths resolve on the site.
+        if [ -d slides/assets ]; then cp -r slides/assets _site/assets; fi
+        # One interactive HTML deck per markdown file, mirroring slides/.
+        ./marp --input-dir slides --output _site --html
+        # Generate an index linking every rendered deck.
+        {
+          echo '<!doctype html>'
+          echo '<html lang="en"><head><meta charset="utf-8">'
+          echo '<title>Slides</title></head><body>'
+          echo '<h1>Slides</h1>'
+          echo '<ul>'
+          find _site -name '*.html' ! -name 'index.html' | sort | while read -r f; do
+            rel="${f#_site/}"
+            echo "<li><a href=\"${rel}\">${rel%.html}</a></li>"
+          done
+          echo '</ul>'
+          echo '</body></html>'
+        } > _site/index.html
+    - name: Publish to gh-pages
+      uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453  # v4.1.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site
