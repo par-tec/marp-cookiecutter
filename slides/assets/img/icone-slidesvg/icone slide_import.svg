@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 66 54.2">
+  <!-- Generator: Adobe Illustrator 30.2.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 105)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="st0" width="66" height="54.2"/>
+    </clipPath>
+  </defs>
+  <g class="st1">
+    <g>
+      <path d="M66,6.2v42c-.2,2.6-2.5,5.7-5.3,5.7H5.3c-2.9,0-4.6-2.6-5.3-5v-12.7h6c0-.1,0,11.9,0,11.9h53.8s0-42,0-42H6s0,12,0,12H0c0,.1,0-12.9,0-12.9C.8,2.2,3.1.2,6.5.2h54.1c3,.1,5.4,3.3,5.4,6Z"/>
+      <polygon points="0 30.2 0 24.2 29.9 24.2 30 15.3 41.9 27.2 30 39 29.9 30.2 0 30.2"/>
+    </g>
+  </g>
+</svg>

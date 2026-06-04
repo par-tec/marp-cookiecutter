@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Par-Tec Istituzionale</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background:#1a1a1a;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  overflow:hidden;
+}
+#stage {
+  position:relative;
+  width:1440px;
+  height:810px;
+  transform-origin:center center;
+  flex-shrink:0;
+}
+.slide {
+  position:absolute;
+  inset:0;
+  display:none;
+  overflow:hidden;
+}
+.slide.active { display:block; }
+.slide-bg {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+/* base text style — positioned absolutely, coordinates 1:1 from PDF (1440×810 canvas) */
+.t {
+  position:absolute;
+  font-family:Arial, Helvetica, sans-serif;
+  line-height:1.2;
+  white-space:pre-line;
+}
+/* nav controls */
+#nav {
+  position:fixed;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:8px;
+  z-index:100;
+}
+#nav button {
+  background:rgba(255,255,255,0.12);
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.25);
+  border-radius:4px;
+  padding:5px 20px;
+  cursor:pointer;
+  font-size:14px;
+  font-family:Arial;
+}
+#nav button:hover { background:rgba(255,255,255,0.25); }
+#counter {
+  color:rgba(255,255,255,0.45);
+  font-family:Arial;
+  font-size:13px;
+  line-height:30px;
+  min-width:52px;
+  text-align:center;
+}
+</style>
+</head>
+<body>
+
+<div id="stage">
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 1 — Cover
+     SVG: SLIDE2 (pannello scuro sx, crema dx)
+     Testo crema su sfondo scuro, lato sinistro
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE2.svg" class="slide-bg" alt="">
+  <div class="t" style="left:106px;top:63px;width:405px;height:238px;font-size:70px;color:#f8f7eb;font-weight:bold;line-height:1.15">Template&#10;Par-Tec&#10;istituzionale</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 2 — Header doppio + pagina
+     SVG: SLIDE6 (sfondo chiaro uniforme)
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE6.svg" class="slide-bg" alt="">
+  <div class="t" style="left:88px;top:72px;font-size:19px;color:#000000">Par-Tec S.p,A.</div>
+  <div class="t" style="left:1031px;top:70px;font-size:19px;color:#000000">Success stories tecnologia Dynatrace</div>
+  <div class="t" style="left:87px;top:740px;font-size:19px;color:#1f0202">2</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 3 — Contenuto: Titolo Capitolo + corpo
+     SVG: SLIDE3 (chiaro con forme geometriche)
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE3.svg" class="slide-bg" alt="">
+  <div class="t" style="left:88px;top:72px;font-size:19px;color:#585858">Par-Tec S.p.A.</div>
+  <div class="t" style="left:1258px;top:94px;font-size:19px;color:#000000">Titolo slide</div>
+  <div class="t" style="left:88px;top:269px;width:204px;height:35px;font-size:32px;color:#000000">Titolo  Capitolo</div>
+  <div class="t" style="left:88px;top:379px;width:550px;height:169px;font-size:23px;color:#000000;line-height:28px;white-space:normal">Inserire qui il tuo testo non farlo troppo lungo e tieni in considerazione che questo testo di esempio è della lunghezza sufficiente. Non ridurre il carattere o l'interlinea, attieniti a questo spazio e, semmai lo ritenessi più opportuno, potresti utilizzare un carattere grassetto.</div>
+  <div class="t" style="left:87px;top:745px;font-size:18px;color:#f8f7eb">3</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 4 — Navigazione sidebar + contenuto sx
+     SVG: SLIDE3
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE3.svg" class="slide-bg" alt="">
+  <div class="t" style="left:88px;top:72px;font-size:19px;color:#585858">Par-Tec S.p.A.</div>
+  <div class="t" style="left:88px;top:228px;width:78px;height:32px;font-size:32px;color:#000000;font-weight:bold">titolo</div>
+  <div class="t" style="left:88px;top:334px;width:42px;height:23px;font-size:23px;color:#000000">Text</div>
+  <div class="t" style="left:961px;top:96px;width:263px;font-size:32px;color:#000000">• Presentazione BU&#10;Technolo-</div>
+  <div class="t" style="left:97px;top:751px;font-size:19px;color:#1f0202">4</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 5 — (solo grafica / immagini)
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE3.svg" class="slide-bg" alt="">
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 6 — (solo grafica / immagini)
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE3.svg" class="slide-bg" alt="">
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 7 — Contenuto (variante senza header)
+     SVG: SLIDE3
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE3.svg" class="slide-bg" alt="">
+  <div class="t" style="left:1258px;top:94px;font-size:19px;color:#000000">Titolo slide</div>
+  <div class="t" style="left:88px;top:269px;width:204px;height:35px;font-size:32px;color:#000000">Titolo  Capitolo</div>
+  <div class="t" style="left:88px;top:379px;width:550px;height:169px;font-size:23px;color:#000000;line-height:28px;white-space:normal">Inserire qui il tuo testo non farlo troppo lungo e tieni in considerazione che questo testo di esempio è della lunghezza sufficiente. Non ridurre il carattere o l'interlinea, attieniti a questo spazio e, semmai lo ritenessi più opportuno, potresti utilizzare un carattere grassetto.</div>
+  <div class="t" style="left:97px;top:753px;font-size:19px;color:#1f0202">7</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 8 — Contatti footer
+     SVG: SLIDE6
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE6.svg" class="slide-bg" alt="">
+  <div class="t" style="left:142px;top:725px;font-size:24px;color:#000000;font-weight:bold">www.par-tec.it</div>
+  <div class="t" style="left:421px;top:725px;font-size:24px;color:#000000;font-weight:bold">info@par-tec.it</div>
+  <div class="t" style="left:700px;top:722px;font-size:24px;color:#000000;font-weight:bold">Milano: +39 02 667321</div>
+  <div class="t" style="left:1062px;top:722px;font-size:24px;color:#000000;font-weight:bold">Roma: +39 06 98269600</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 9 — (solo grafica / immagini)
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE6.svg" class="slide-bg" alt="">
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 10 — Griglia 6 box (Titolo 1–6)
+     SVG: SLIDE6
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE6.svg" class="slide-bg" alt="">
+  <div class="t" style="left:81px;top:211px;width:248px;height:72px;font-size:70px;color:#1f0202;font-weight:bold">Titolo 3</div>
+  <div class="t" style="left:204px;top:379px;width:101px;height:65px;font-size:29px;color:#000000;font-weight:bold">Titolo 1&#10;Te -</div>
+  <div class="t" style="left:204px;top:530px;width:101px;height:65px;font-size:29px;color:#000000;font-weight:bold">Titolo 3&#10;Te -</div>
+  <div class="t" style="left:638px;top:380px;width:101px;height:65px;font-size:29px;color:#000000;font-weight:bold">Titolo 2&#10;Te -</div>
+  <div class="t" style="left:638px;top:530px;width:101px;height:65px;font-size:29px;color:#000000;font-weight:bold">Titolo 4&#10;Te -</div>
+  <div class="t" style="left:1075px;top:378px;width:101px;height:65px;font-size:29px;color:#000000;font-weight:bold">Titolo 5&#10;Te -</div>
+  <div class="t" style="left:1075px;top:528px;width:101px;height:65px;font-size:29px;color:#000000;font-weight:bold">Titolo 6&#10;Te -</div>
+  <div class="t" style="left:88px;top:751px;font-size:19px;color:#f8f7eb">10</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 11 — Tabella placeholder
+     SVG: SLIDE6
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE6.svg" class="slide-bg" alt="">
+  <div class="t" style="left:81px;top:166px;width:542px;height:72px;font-size:70px;color:#1f0202;font-weight:bold">Esempio Tabella</div>
+  <div class="t" style="left:88px;top:751px;font-size:19px;color:#f8f7eb">11</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 12 — Lista 01/02/03 (numeri bianchi su cerchi scuri nell'SVG)
+     SVG: SLIDE3
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE3.svg" class="slide-bg" alt="">
+  <div class="t" style="left:1258px;top:94px;font-size:19px;color:#000000">Titolo slide</div>
+  <div class="t" style="left:871px;top:186px;width:29px;height:26px;font-size:26px;color:#ffffff;font-weight:bold">01</div>
+  <div class="t" style="left:871px;top:368px;width:29px;height:26px;font-size:26px;color:#ffffff;font-weight:bold">02</div>
+  <div class="t" style="left:871px;top:539px;width:29px;height:26px;font-size:26px;color:#ffffff;font-weight:bold">03</div>
+  <div class="t" style="left:94px;top:753px;font-size:19px;color:#1f0202">12</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 13 — (solo grafica / immagini)
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE6.svg" class="slide-bg" alt="">
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 14 — Testo + grafico a torta (etichette)
+     SVG: SLIDE6
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE6.svg" class="slide-bg" alt="">
+  <div class="t" style="left:81px;top:176px;width:138px;height:70px;font-size:70px;color:#1f0202;font-weight:bold">Tar-</div>
+  <div class="t" style="left:81px;top:349px;width:625px;font-size:29px;color:#1f0202;line-height:36px;white-space:normal">Irure dolore velit excepteur Lorem eiusmod qui aliquip velit esse ipsum nulla occaecat.</div>
+  <div class="t" style="left:81px;top:481px;width:602px;font-size:21px;color:#1f0202;line-height:26px;white-space:normal">Irure dolore velit excepteur Lorem eiusmod culpa et ipsum occaecat ut in excepteur consectetur qui aliquip velit esse ipsum nulla occaecat id ad sint in nulla incididunt cupidatat nisi officia est ex eu amet aute ullamco nostrud eu magna magna mollit commodo proident aliqua officia culpa occaecat.</div>
+  <div class="t" style="left:87px;top:745px;font-size:19px;color:#1f0202">14</div>
+  <!-- etichette grafico a torta -->
+  <div class="t" style="left:906px;top:177px;font-size:14px;color:#1f0202">Age 18-25</div>
+  <div class="t" style="left:911px;top:235px;font-size:14px;color:#1f0202">Age 25-35</div>
+  <div class="t" style="left:1068px;top:219px;font-size:15px;color:#1f0202">Gender</div>
+  <div class="t" style="left:1075px;top:403px;font-size:14px;color:#1f0202">Age 35-45</div>
+  <div class="t" style="left:1086px;top:438px;font-size:15px;color:#1f0202">Gender</div>
+  <div class="t" style="left:1066px;top:473px;font-size:14px;color:#1f0202">33% Female</div>
+  <div class="t" style="left:923px;top:483px;font-size:14px;color:#1f0202">33% Other</div>
+  <div class="t" style="left:930px;top:518px;font-size:14px;color:#1f0202">33% Male</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 15 — Grafico placeholder (versione A)
+     SVG: SLIDE3
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE3.svg" class="slide-bg" alt="">
+  <div class="t" style="left:70px;top:264px;width:327px;height:60px;font-size:60px;color:#000000;font-weight:bold">GRAFICO 1</div>
+  <div class="t" style="left:112px;top:400px;width:511px;height:163px;font-size:42px;color:#000000;line-height:50px">•  Fare clic per modificare gli&#10;stili del testo dello schema&#10;•  ⚬  Secondo livello&#10;•  ⚬  Terzo livello</div>
+  <div class="t" style="left:213px;top:565px;font-size:27px;color:#000000">•  Quarto livello&#10;•  ⚬  Quinto livello</div>
+  <div class="t" style="left:87px;top:741px;font-size:18px;color:#f8f7eb">15</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 16 — Grafico placeholder (versione B)
+     SVG: SLIDE3
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE3.svg" class="slide-bg" alt="">
+  <div class="t" style="left:70px;top:264px;width:327px;height:60px;font-size:60px;color:#000000;font-weight:bold">GRAFICO 1</div>
+  <div class="t" style="left:112px;top:400px;width:511px;height:181px;font-size:42px;color:#000000;line-height:50px">•  Fare clic per modificare gli&#10;stili del testo dello schema&#10;•  ⚬  Secondo livello&#10;•  ⚬  Terzo livello</div>
+  <div class="t" style="left:213px;top:583px;font-size:27px;color:#000000">•  Quarto livello</div>
+  <div class="t" style="left:87px;top:745px;font-size:19px;color:#1f0202">16</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 17 — Icone placeholder
+     SVG: SLIDE6
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <img src="assets/img/SLIDE6.svg" class="slide-bg" alt="">
+  <div class="t" style="left:79px;top:153px;width:248px;height:18px;font-size:18px;color:#000000;font-weight:bold">TI SERVONO DELLE ICONE?</div>
+  <div class="t" style="left:92px;top:751px;font-size:19px;color:#1f0202">17</div>
+</div>
+
+</div><!-- #stage -->
+
+<div id="nav">
+  <button onclick="show(current-1)">◀</button>
+  <div id="counter">1 / 17</div>
+  <button onclick="show(current+1)">▶</button>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+let current = 0;
+
+function show(n) {
+  slides[current].classList.remove('active');
+  current = ((n % slides.length) + slides.length) % slides.length;
+  slides[current].classList.add('active');
+  document.getElementById('counter').textContent = (current + 1) + ' / ' + slides.length;
+}
+
+// keyboard: frecce, spazio, PageUp/Down
+document.addEventListener('keydown', function(e) {
+  if (['ArrowRight', ' ', 'PageDown'].includes(e.key)) { e.preventDefault(); show(current + 1); }
+  if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); show(current - 1); }
+});
+
+// click su metà destra → avanti, metà sinistra → indietro
+document.getElementById('stage').addEventListener('click', function(e) {
+  const rect = this.getBoundingClientRect();
+  const x = (e.clientX - rect.left) / rect.width;
+  show(x > 0.5 ? current + 1 : current - 1);
+});
+
+// scala il canvas al viewport mantenendo il ratio 16:9
+function scale() {
+  const stage = document.getElementById('stage');
+  const navH = 44;
+  const sx = window.innerWidth / 1440;
+  const sy = (window.innerHeight - navH) / 810;
+  const s = Math.min(sx, sy);
+  stage.style.transform = 'scale(' + s + ')';
+}
+window.addEventListener('resize', scale);
+scale();
+
+show(0);
+</script>
+</body>
+</html>
