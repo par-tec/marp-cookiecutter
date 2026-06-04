@@ -1,0 +1,44 @@
+# Render the Marp slides in slides/ and publish them to the gh-pages branch.
+
+name: Publish slides
+
+on:
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Least privilege by default; the publish job opts into write access.
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      # Needed to push the rendered slides to the gh-pages branch.
+      contents: write
+
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+
+      - name: Render Marp slides to HTML
+        # Pinned by digest (sha256) for reproducible builds.
+        run: |
+          mkdir -p _site
+          cp -r slides/assets _site/assets
+          docker run --rm --init \
+            -e MARP_USER="$(id -u):$(id -g)" \
+            -v "$PWD/slides:/home/marp/app" \
+            -v "$PWD/_site:/site" \
+            marpteam/marp-cli@sha256:073470f0b5cb526fdce43aaace48d93788eafe9f0962ab867aac9c2c3b29d2c2 \
+            template.md --html -o /site/index.html
+
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site

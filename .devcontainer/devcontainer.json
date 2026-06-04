@@ -1,0 +1,43 @@
+{
+  "name": "marp-cookiecutter (sandbox)",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  // Only the repository is exposed to the container. No ~/.ssh, ~/.aws,
+  // ~/.config/claude, docker.sock, or other host mounts — keep this list
+  // empty so an agent inside cannot reach host state.
+  "mounts": [],
+
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+
+  "remoteUser": "vscode",
+  "containerUser": "vscode",
+
+  // Drop Linux capabilities and forbid privilege escalation. Combined with
+  // the non-root user this is the minimum hardening we want by default.
+  // To additionally sandbox syscalls, install gVisor and uncomment the
+  // --runtime line below (see CONTAINER-SECURITY.md).
+  "runArgs": [
+    "--cap-drop=ALL",
+    "--security-opt=no-new-privileges"
+    // ,"--runtime=runsc"
+  ],
+
+  // Install project dev extras once the container is up.
+  "postCreateCommand": "pip install --user -e '.[dev]'",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "anthropic.claude-code"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.testing.pytestEnabled": true
+      }
+    }
+  }
+}

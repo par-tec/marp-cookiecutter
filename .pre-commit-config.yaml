@@ -26,3 +26,8 @@ repos:
       args:
       # See https://github.com/pre-commit/pre-commit-hooks/issues/174
       - --allow-missing-credentials
+# Audit GitHub Actions workflows for security issues.
+-   repo: https://github.com/zizmorcore/zizmor-pre-commit
+    rev: v1.25.2
+    hooks:
+    - id: zizmor
