@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: partec
-paginate: false
+paginate: true
 title: How Italy shaped its API Governance Strategy: a retrospective
 duration: 20m
 level: beginner
@@ -84,7 +84,7 @@ abstract: |-
     Instead, providing central services to autonomies is a way to consolidate expenditure and
     relieving the burden of cybersecurity and maintenance from the shoulders of local administrations, which can then focus on delivering value to citizens.
 ---
-<!-- footer: ![w:400](assets/img/logo/logo-black-noclaim.svg) -->
+<!-- footer: :warning: All opinions are my own. Not affiliated nor endorsed by the Italian Government ![w:400](assets/img/logo/logo-black-noclaim.svg)" -->
 
 <style>
 /*
@@ -92,6 +92,11 @@ abstract: |-
   SLIDE2 / SLIDE5: pannello scuro a sinistra, crema da x=703 SVG → x≈625 Marp
   SLIDE3 / SLIDE6: sfondo tutto chiaro, forme decorative come bg
 */
+
+section {
+    background-color: #f5f6f0; /* Background color for par-tec slides. More readable, less flashy than white. */
+}
+
 
 /* Cover — SLIDE2: contenuto nel pannello crema (metà destra) */
 section.sv-cover {
@@ -130,8 +135,8 @@ footer {
   bottom: auto;
 
   /* Place to right-bottom */
-  right: -50px;
-  bottom: -100px;
+  rig ht: -50px;
+  bott om: -100px;
 }
 
 /* --- Two-column content --- */
@@ -371,4 +376,5 @@ roberto.polli@par-tec.it
 <!--
 _class: sv-closing
 _backgroundImage: "url('assets/img/istituzionale/final.svg')"
+_footer: "url()"
 -->
