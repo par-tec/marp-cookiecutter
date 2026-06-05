@@ -84,7 +84,7 @@ abstract: |-
     Instead, providing central services to autonomies is a way to consolidate expenditure and
     relieving the burden of cybersecurity and maintenance from the shoulders of local administrations, which can then focus on delivering value to citizens.
 ---
-<!-- footer: :warning: All opinions are my own. Not affiliated nor endorsed by the Italian Government ![w:400](assets/img/logo/logo-black-noclaim.svg)" -->
+<!-- footer: :warning: All opinions are my own. Not affiliated nor endorsed by the Italian Government ![w:150](assets/img/logo/logo-black-noclaim.svg)" -->
 
 <style>
 /*
@@ -135,7 +135,8 @@ footer {
   bottom: auto;
 
   /* Place to right-bottom */
-  rig ht: -50px;
+  color: white
+  rig ht: -200px;
   bott om: -100px;
 }
 
@@ -200,6 +201,7 @@ Red Hat, MongoDB | MySQL Certified
 <!--
 _class: sv-content
 _footer: "url()"
+_backgroundImage: url('assets/img/istituzionale/columns-2-text-text.svg')
 -->
 ## par-tec.it
 

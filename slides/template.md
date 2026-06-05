@@ -146,7 +146,7 @@ footer {
   padding: 0 80px;
   font-family: var(--font-body);
   font-size: 16px;
-  color: rgba(0,0,0,0.45);
+  color: rgba(255,255,255,0.85);
   background: transparent;
 }
 
