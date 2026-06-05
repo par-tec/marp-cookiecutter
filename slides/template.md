@@ -150,21 +150,8 @@ footer {
   background: transparent;
 }
 
-/* Logo always in the bottom-right corner via pseudo-element */
-section::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 20px;
-  right: 56px;
-  width: 130px;
-  height: 28px;
-  background-image: var(--logo-path);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right center;
-  opacity: 0.85;
-}
+/* Logo disabled */
+section::after { display: none; }
 
 /* ────────────────────────────────────────────────────────────────
    DECORATIVE SHAPES  (left-side accent, used on most slides)
