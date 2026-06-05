@@ -171,6 +171,8 @@ _backgroundImage: "url('assets/img/istituzionale/cover.svg')"
 <!--
 _class: two-col
 _footer: "url()"
+_backgroundImage: url('assets/img/istituzionale/columns-2-text-text.svg')
+_backgroundSize: cover
 -->
 
 <div class="columns">
