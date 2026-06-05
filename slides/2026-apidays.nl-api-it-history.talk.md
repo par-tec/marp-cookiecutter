@@ -94,7 +94,7 @@ abstract: |-
 */
 
 section {
-    background-color: #f5f6f0; /* Background color for par-tec slides. More readable, less flashy than white. */
+    background-color: #fcf6f0; /* Background color for par-tec slides. More readable, less flashy than white. */
 }
 
 
@@ -113,7 +113,7 @@ section.sv-closing {
   padding-left: 640px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left;
 }
 
 section.sv-closing h1 {
@@ -212,6 +212,10 @@ _backgroundImage: url('assets/img/istituzionale/columns-2-text-text.svg')
 - A team of 200+ employees with 200+ professional certifications
 
 ---
+<!--
+_backgroundImage: url('assets/img/istituzionale/columns-2-text-text.svg')
+_backgroundSize: cover
+-->
 
 ## Agenda
 

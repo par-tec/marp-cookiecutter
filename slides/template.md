@@ -255,6 +255,7 @@ section.has-hexagons .content {
 /* --- Cover / Title slide --- */
 section.cover {
   background-color: var(--color-bg);
+  color: var(--color-white);
   padding-left: 0;
   overflow: hidden;
 }
@@ -281,7 +282,7 @@ section.cover h1 {
 
 section.cover .subtitle {
   font-size: 26px;
-  color: rgba(0,0,0,0.6);
+  color: rgba(255,255,255,0.75);
   margin-top: 16px;
 }
 
