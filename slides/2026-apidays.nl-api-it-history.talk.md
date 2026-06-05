@@ -84,7 +84,7 @@ abstract: |-
     Instead, providing central services to autonomies is a way to consolidate expenditure and
     relieving the burden of cybersecurity and maintenance from the shoulders of local administrations, which can then focus on delivering value to citizens.
 ---
-<!-- footer: :warning: All opinions are my own. Not affiliated nor endorsed by the Italian Government ![w:400](assets/img/logo/logo-black-noclaim.svg)" -->
+<!-- footer: :warning: All opinions are my own. Not affiliated nor endorsed by the Italian Government ![w:150](assets/img/logo/logo-black-noclaim.svg)" -->
 
 <style>
 /*
@@ -94,7 +94,7 @@ abstract: |-
 */
 
 section {
-    background-color: #f5f6f0; /* Background color for par-tec slides. More readable, less flashy than white. */
+    background-color: #fcf6f0; /* Background color for par-tec slides. More readable, less flashy than white. */
 }
 
 
@@ -113,7 +113,7 @@ section.sv-closing {
   padding-left: 640px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left;
 }
 
 section.sv-closing h1 {
@@ -135,7 +135,8 @@ footer {
   bottom: auto;
 
   /* Place to right-bottom */
-  rig ht: -50px;
+  color: white
+  rig ht: -200px;
   bott om: -100px;
 }
 
@@ -170,6 +171,8 @@ _backgroundImage: "url('assets/img/istituzionale/cover.svg')"
 <!--
 _class: two-col
 _footer: "url()"
+_backgroundImage: url('assets/img/istituzionale/columns-2-text-text.svg')
+_backgroundSize: cover
 -->
 
 <div class="columns">
@@ -200,6 +203,7 @@ Red Hat, MongoDB | MySQL Certified
 <!--
 _class: sv-content
 _footer: "url()"
+_backgroundImage: url('assets/img/istituzionale/columns-2-text-text.svg')
 -->
 ## par-tec.it
 
@@ -208,6 +212,10 @@ _footer: "url()"
 - A team of 200+ employees with 200+ professional certifications
 
 ---
+<!--
+_backgroundImage: url('assets/img/istituzionale/columns-2-text-text.svg')
+_backgroundSize: cover
+-->
 
 ## Agenda
 

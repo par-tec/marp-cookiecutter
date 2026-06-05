@@ -146,25 +146,12 @@ footer {
   padding: 0 80px;
   font-family: var(--font-body);
   font-size: 16px;
-  color: rgba(0,0,0,0.45);
+  color: rgba(255,255,255,0.85);
   background: transparent;
 }
 
-/* Logo always in the bottom-right corner via pseudo-element */
-section::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 20px;
-  right: 56px;
-  width: 130px;
-  height: 28px;
-  background-image: var(--logo-path);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right center;
-  opacity: 0.85;
-}
+/* Logo disabled */
+section::after { display: none; }
 
 /* ────────────────────────────────────────────────────────────────
    DECORATIVE SHAPES  (left-side accent, used on most slides)
@@ -255,6 +242,7 @@ section.has-hexagons .content {
 /* --- Cover / Title slide --- */
 section.cover {
   background-color: var(--color-bg);
+  color: var(--color-white);
   padding-left: 0;
   overflow: hidden;
 }
@@ -281,7 +269,7 @@ section.cover h1 {
 
 section.cover .subtitle {
   font-size: 26px;
-  color: rgba(0,0,0,0.6);
+  color: rgba(255,255,255,0.75);
   margin-top: 16px;
 }
 
