@@ -2,12 +2,15 @@
 marp: true
 theme: partec
 paginate: true
-title: How Italy shaped its API Governance Strategy: a retrospective
+title: >-
+  How Italy shaped its API Governance Strategy: a retrospective
 duration: 20m
 level: beginner
 tags:
 - api-governance
 - public-sector
+time: 1135-1200
+time: 1200-1225 Panel
 abstract: |-
     # How Italy shaped its API Governance Strategy: a retrospective
 
@@ -84,7 +87,7 @@ abstract: |-
     Instead, providing central services to autonomies is a way to consolidate expenditure and
     relieving the burden of cybersecurity and maintenance from the shoulders of local administrations, which can then focus on delivering value to citizens.
 ---
-<!-- footer: :warning: All opinions are my own. Not affiliated nor endorsed by the Italian Government ![w:400](assets/img/logo/logo-black-noclaim.svg)" -->
+<!-- footer: <p>:warning: All opinions are my own. Not affiliated nor endorsed by the Italian Government</p> -->
 
 <style>
 /*
@@ -148,10 +151,11 @@ section.two-col .columns {
 }
 
 </style>
+
 ---
+
 <!--
 _class: cover
-_backgroundImage: "url('assets/img/istituzionale/cover.svg')"
 -->
 
 <div class="title-area">
@@ -159,9 +163,13 @@ _backgroundImage: "url('assets/img/istituzionale/cover.svg')"
 # How Italy shaped its API Governance Strategy
 
 
-<div class="subtitle">2018-2022: a retrospective</div>
+<div class="subtitle">a retrospective</div>
 
-<div class="author">Roberto Polli <roberto.polli@par-tec.it></div>
+
+APIDays
+Amsterdam, June 9th 2026
+
+<div class="author">Roberto Polli - roberto.polli@par-tec.it</div>
 
 </div>
 
@@ -169,7 +177,7 @@ _backgroundImage: "url('assets/img/istituzionale/cover.svg')"
 
 <!--
 _class: two-col
-_footer: "url()"
+_footer: ""
 -->
 
 <div class="columns">
@@ -191,15 +199,13 @@ Red Hat, MongoDB | MySQL Certified
 
 <div>
 
-![bg](assets/img/istituzionale/columns-2-text-img2.svg)
-
 </div>
 </div>
 
 ---
 <!--
 _class: sv-content
-_footer: "url()"
+_footer: ""
 -->
 ## par-tec.it
 
@@ -282,6 +288,10 @@ We started with:
 - Scheme standardization based on industry standards
 - Availability strategy
 
+---
+
+## API Guidelines and Standards - 1
+
 Challenges:
 
 - Agencies had invested in SOAP and were not happy to migrate
@@ -302,6 +312,10 @@ What worked:
 - Move as much contract information out of PDFs and into machine readable formats (e.g., OpenAPI, JSON Schema) to improve consistency between documentation.
 - API design training for public administrations (e.g., workshops)
 - Identify gaps in the existing standards and propose extensions (e.g., HTTP, OAuth, OpenAPI)
+
+---
+
+## API Guidelines and Standards - 2
 
 Challenges:
 
@@ -334,6 +348,8 @@ due to the federal structure of the country,
 it was then decided to converge the two initiatives into a single platform, api.gov.it
 with a legal basis in the Digital Administration Code (CAD).
 
+---
+
 ## API Platforms Design - 2
 
 In the context of the Next Generation EU funding,
@@ -341,6 +357,10 @@ we consolidated the design of the two core API platforms:
 
 - the API Catalogue and authentication platform (api.gov.it);
 - the national schema registry (schema.gov.it), to standardize data models and ensure interoperability across services.
+
+---
+
+## API Platforms Design - 2
 
 Challenges:
 
@@ -376,5 +396,5 @@ roberto.polli@par-tec.it
 <!--
 _class: sv-closing
 _backgroundImage: "url('assets/img/istituzionale/final.svg')"
-_footer: "url()"
+_footer: ""
 -->
